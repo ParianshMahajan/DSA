@@ -36,11 +36,11 @@ class node{
 
 
 //Insertion
-void insert_at_tail(node *&head,int d){
+void insert_at_tail(node *&tail,int d){
     node *temp=new node(d);
-    head->next=temp;
-    temp->prev=head;
-    head=temp;
+    tail->next=temp;
+    temp->prev=tail;
+    tail=temp;
 }
 
 void insert_at_head(node *&head,int d){
