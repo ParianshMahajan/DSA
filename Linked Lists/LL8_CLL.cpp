@@ -54,7 +54,7 @@ void insert_at_mid(node* &tail,int d,int n){
     node *insert = new node(d);
     node *temp=tail;
 
-    for(int i=0 ;i<n-1  ;i++){      // n-1 bcoz at 1st iteration, temp= head, so at n-1 it will reach a node at position b4 n 
+    for(int i=0 ;i<n-1  ;i++){      // n-1 bcoz at 1st iteration, temp= tail, so at n-1 it will reach a node at position b4 n 
         temp=temp->next;
     }
     insert->next=temp->next;
