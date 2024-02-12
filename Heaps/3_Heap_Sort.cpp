@@ -29,7 +29,7 @@ void heapify(int arr[],int n,int i){
 
 // O(N) 
 void buildHeap(int arr[],int n){
-    for(int i=0;i<n/2;i++){
+    for(int i=n/2-1;i>0;i--){
         heapify(arr,n,i);    
     }
 }
@@ -39,11 +39,9 @@ void buildHeap(int arr[],int n){
 // O(N) 
 void heapSort(int arr[],int n){
     
-    int t=n-1;
-    while(t>=2){
-        swap(arr[0],arr[t]);
-        t--;
-        heapify(arr,t,0);
+    for (int i = n- 1; i >= 0; i--) {
+        swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
     }
 
 
@@ -51,8 +49,8 @@ void heapSort(int arr[],int n){
 
 
 int main(){
-    int arr[5]={54,53,55,52,50};
-    int n=5;
+    int arr[4]={5,2,3,1};
+    int n=4;
 
     buildHeap(arr,n);
     heapSort(arr,n);

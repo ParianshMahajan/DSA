@@ -1,20 +1,16 @@
-#include<iostream>
-using namespace std;
 #include<bits/stdc++.h>
-#include<vector>
+using namespace std;
 
 int srch(int *arr,int n,int key){
-     
-     if(n<1){
+     if(n<=0){
           return -1;
      }
 
-     if(*(arr+n-1)== key){
-          return n;    
+     if(arr[n-1]==key){
+          return n;
      }
-     else{
-     srch(arr,n-1,key);
-     }
+
+     return srch(arr,n-1,key);
 }
 
 
@@ -27,6 +23,6 @@ int main(){
      if(ans<0)
      cout<<"Key Not Found";
      else
-     cout<<"Key Found :: "<<ans;
+     cout<<"Key Found at position "<<ans;
      return 0;
 }
